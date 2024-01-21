@@ -1,0 +1,169 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="profile"
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/update_home"
+            android:textColor="@color/white"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/logo1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="35dp"/>
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"/>
+
+
+
+        <TextView
+            android:id="@+id/profile_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_name"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="19dp"
+            android:text="Department"
+            android:layout_marginTop="12dp"/>
+
+        <EditText
+            android:id="@+id/profile_editable_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_name"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="19dp"
+            android:hint="Department"
+            android:layout_toLeftOf="@id/profile_departmentEditFinish"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/profile_departmentEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/edit"
+            android:layout_below="@id/profile_name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="12dp"/>
+
+
+        <ImageView
+            android:id="@+id/profile_departmentEditFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tick"
+            android:layout_below="@id/profile_name"
+            android:layout_alignParentEnd="true"
+           android:layout_marginTop="12dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_department"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"/>
+
+
+
+        <TextView
+            android:id="@+id/profile_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_email"
+            android:inputType="number"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:text="Phone"
+            android:layout_marginTop="12dp"/>
+
+        <EditText
+            android:id="@+id/profile_editable_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_email"
+            android:inputType="number"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:hint="Phone"
+            android:layout_toLeftOf="@id/profile_phoneEditFinish"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/profile_phoneEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/edit"
+            android:layout_below="@id/profile_email"
+            android:layout_alignParentEnd="true"
+           android:layout_marginTop="12dp"/>
+
+        <ImageView
+            android:id="@+id/profile_phoneEditFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tick"
+            android:layout_below="@id/profile_email"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="12dp"
+            android:visibility="invisible"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/profile_phone"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/profile_btn"
+                android:paddingBottom="15dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sign out"
+                android:layout_margin="10dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

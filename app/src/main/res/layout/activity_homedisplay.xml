@@ -1,0 +1,148 @@
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:layout_marginBottom="12dp"
+    android:id="@+id/my_card">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="65dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/person_icon"
+                android:background="@drawable/shape2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:textSize="14dp"
+                android:layout_toRightOf="@id/profile"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/name"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_toRightOf="@id/name"
+                android:id="@+id/homeDisplay_name"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:"
+                android:layout_toRightOf="@id/profile"
+                android:layout_marginLeft="12dp"
+                android:textSize="14dp"
+                android:id="@+id/email"
+                android:layout_below="@id/homeDisplay_name"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_toRightOf="@id/email"
+                android:layout_below="@id/homeDisplay_name"
+                android:id="@+id/homeDisplay_email"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Department:"
+                android:layout_toRightOf="@id/profile"
+                android:layout_marginLeft="12dp"
+                android:textSize="14dp"
+                android:id="@+id/department"
+                android:layout_below="@id/email"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_toRightOf="@id/department"
+                android:layout_below="@id/homeDisplay_email"
+                android:id="@+id/homeDisplay_department"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone:"
+                android:layout_toRightOf="@id/profile"
+                android:layout_marginLeft="12dp"
+                android:textSize="14dp"
+                android:id="@+id/phone"
+                android:layout_below="@id/department"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_toRightOf="@id/phone"
+                android:layout_below="@id/homeDisplay_department"
+                android:id="@+id/homeDisplay_phone"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile"
+                android:layout_marginTop="28dp"
+                android:id="@+id/homeDisplay_intent_layout"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/email"
+                    android:id="@+id/homeDisplay_emailBtn"
+                    android:layout_marginLeft="98dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/phone"
+                    android:id="@+id/homeDisplay_phoneBtn"
+                    android:layout_toRightOf="@id/homeDisplay_emailBtn"
+                    android:layout_marginLeft="20dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/share"
+                    android:id="@+id/home_display_shareBtn"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/homeDisplay_phoneBtn"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/homeDisplay_favouriteBtn"
+                    android:layout_toRightOf="@id/home_display_shareBtn"
+                    android:layout_marginLeft="20dp"
+                    android:visibility="invisible"
+                    android:src="@drawable/favourite_1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/homeDisplay_unFavouriteBtn"
+                    android:layout_toRightOf="@id/home_display_shareBtn"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/favourite_2"/>
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

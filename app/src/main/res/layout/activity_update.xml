@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+   <androidx.appcompat.widget.Toolbar
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/black">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Update"
+          android:textStyle="bold"
+          android:textSize="23dp"
+          android:paddingLeft="10dp"
+          android:id="@+id/update_home"
+          android:textColor="@color/white"/>
+
+   </androidx.appcompat.widget.Toolbar>
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:padding="16dp">
+
+   <ImageView
+       android:id="@+id/logo"
+       android:layout_width="120dp"
+       android:layout_height="120dp"
+       android:background="@drawable/logo1"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="25dp"
+       android:layout_marginBottom="35dp"/>
+
+   <EditText
+       android:id="@+id/update_name"
+       android:textSize="17dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/logo"
+       android:layout_marginBottom="12dp"/>
+
+      <TextView
+         android:id="@+id/update_department"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/update_name"
+          android:textColor="@color/white"
+          android:textStyle="bold"
+          android:textSize="19dp"
+       android:layout_marginBottom="12dp"/>
+
+   <EditText
+       android:id="@+id/update_email"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/update_department"
+       android:textSize="17dp"
+       android:layout_marginBottom="12dp"/>
+
+   <EditText
+       android:id="@+id/update_phone"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/update_email"
+       android:inputType="number"
+       android:textSize="17dp"
+       android:layout_marginBottom="12dp"/>
+
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_below="@id/update_phone"
+       android:layout_marginTop="16dp">
+
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/update_btn"
+          android:paddingBottom="15dp"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="update"
+          android:layout_margin="10dp"
+          android:paddingStart="16dp"
+          android:paddingEnd="16dp"
+          android:minHeight="0dp"
+          android:minWidth="0dp" />
+
+   </LinearLayout>
+   </RelativeLayout>
+</LinearLayout>
