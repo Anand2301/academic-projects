@@ -1,0 +1,51 @@
+import pandas as pd
+import numpy as np
+from catboost import CatBoostRegressor
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+import shap
+import itertools
+from sklearn.model_selection import KFold
+
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+
+df = pd.read_csv("C:/Users/anand/Downloads/Clean_Dataset.csv (1)/Clean_Dataset.csv", index_col=0)
+
+df["stops"] = df["stops"].replace({'zero': 0, 'one': 1, 'two_or_more': 2}).astype(int)
+df["class"] = df["class"].replace({'Economy': 0, 'Business': 1}).astype(int)
+
+print(df.dtypes)
+
+y_col = 'price'
+X_col = ['airline', 'flight', 'source_city', 'departure_time', 'stops', 'arrival_time', 'destination_city', 'class',
+         'days_left', 'duration']
+cat_features = df.select_dtypes(include=['object']).columns.tolist()
+
+train = df.sample(frac=0.7,random_state=42).copy()
+val = df[~df.index.isin(train.index)].copy()
+model = CatBoostRegressor(iterations=6000,
+                              learning_rate=0.4,
+                              early_stopping_rounds=50,
+                              verbose=100,
+                              cat_features=cat_features,
+                              depth=9,
+                              loss_function='RMSE',
+                              eval_metric='RMSE')
+
+model.fit(train[X_col],train[y_col],eval_set=(val[X_col],val[y_col]))
+
+y_col_pred = 'pred_CBR'
+val[y_col_pred] = model.predict(val[X_col])
+train[y_col_pred] = model.predict(train[X_col])
+
+train_CBR_rmse = mean_squared_error(train[[y_col_pred]], train[[y_col]], squared=False)
+val_CBR_rmse = mean_squared_error(val[[y_col_pred]], val[[y_col]], squared=False)
+
+print(f'{train_CBR_rmse=}')
+print(f'{val_CBR_rmse=}')
+
+val_score_r2 = r2_score(val[y_col], val[y_col_pred])
+val_score_mae = mean_absolute_error(val[y_col], val[y_col_pred])
+
+print(f'{val_score_r2=}')
+print(f'{val_score_mae=}')
